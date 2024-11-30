@@ -1,47 +1,70 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="container">
+    <h1>Adivinhe o número</h1>
+    <h2>Você consegue desconbrir em <strong>qual<br>
+      número estou pensando?</strong></h2>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <DisplayResult />
+    <GameBoard />
+    <ButtonComponent />
 
-  <main>
-    <TheWelcome />
-  </main>
+    <p class="footer">Área do Código © 2024 - Paulo Reis - Todos os direitos reservados</p>
+
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+.container {
+  display: flex;
+  width: 492px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h1 {
+  color: #6E9640;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+h2 {
+  color: #3E7100;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+h2 strong {
+  font-weight: bold;
+}
+
+.footer {
+  font-size: 13px;
+  color: #3E7100;
+}
+
 </style>
+
+<script>
+
+import ButtonComponent from './components/ButtonComponent.vue';
+import DisplayResult from './components/DisplayResult.vue';
+import GameBoard from './components/GameBoard.vue';
+
+export default {
+  components: {
+    DisplayResult,
+    GameBoard,
+    ButtonComponent
+  },
+  methods: {
+  }
+}
+
+</script>
